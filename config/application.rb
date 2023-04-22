@@ -18,5 +18,9 @@ module BaseProject2023
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    
+    I18N.load_path += Dir[Rails.root.join("config","locales","*.{yml}")]
+    I18N.default_locale = :es
+
   end
 end
