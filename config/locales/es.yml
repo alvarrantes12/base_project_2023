@@ -1,0 +1,19 @@
+es:
+  application:
+    list_of: Lista del %{model}
+    new_model: Nuevo %{model}
+    show: Mostrar
+    edit: Editar
+    delete: Eliminar
+    create: Crear
+  activerecord:
+    content:
+      title: Título
+      description: Descripción
+      start_date: Fecha de inicio
+      end_date: Fecha de terminacion.
+  nodules:
+    content:
+      one: Contenido
+      other: Contenidos
+  errors:
