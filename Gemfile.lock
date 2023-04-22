@@ -240,6 +240,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.2)
   rspec-rails
   selenium-webdriver
+  sprockets
   sprockets-rails
   stimulus-rails
   turbo-rails
