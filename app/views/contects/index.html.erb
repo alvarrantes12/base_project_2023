@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Contects</h1>
+
+<div id="contects">
+  <% @contects.each do |contect| %>
+    <%= render contect %>
+    <p>
+      <%= link_to "Show this contect", contect %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New contect", new_contect_path %>

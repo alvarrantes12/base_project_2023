@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @contect %>
+
+<div>
+  <%= link_to "Edit this contect", edit_contect_path(@contect) %> |
+  <%= link_to "Back to contects", contects_path %>
+
+  <%= button_to "Destroy this contect", @contect, method: :delete %>
+</div>
