@@ -2,6 +2,8 @@ class ContentsController < ApplicationController
   before_action :set_content, only: %i[ show edit update destroy ]
 
   def index
+    # Esto es usado para realizar debbuging.
+    # binding.pry             
     @contents = Content.all
   end
 
