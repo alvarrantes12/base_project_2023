@@ -19,8 +19,8 @@
         %tr
           %td= content.title
           %td= content.description
-          %td= content.start_date.strtime("%d/%m/%Y %I:%M %P")
-          %td= content.end_date.strtime("%d/%m/%Y %I:%M %P")
+          %td= content.start_date.strftime("%d/%m/%Y %I:%M %P")
+          %td= content.end_date.strftime("%d/%m/%Y %I:%M %P")
           %td= link_to t('application.show'), content, class: "btn btn-info"
           %th= link_to t('application.edit'), edit_content_path(content), class: "btn btn-success"
           %th= link_to t('application.delete'), content, class: "btn btn-danger"
