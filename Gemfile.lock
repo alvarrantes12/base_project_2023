@@ -292,7 +292,6 @@ DEPENDENCIES
   rspec-rails
   sass-rails
   selenium-webdriver
-  sprockets
   sprockets-rails
   stimulus-rails
   turbo-rails
