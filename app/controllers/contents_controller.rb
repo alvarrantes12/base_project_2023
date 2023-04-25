@@ -26,10 +26,8 @@ class ContentsController < ApplicationController
     respond_to do |format|
       if @content.save
         format.html { redirect_to content_url(@content), notice: "Content was successfully created." }
-        format.json { render :show, status: :created, location: @content }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -39,10 +37,8 @@ class ContentsController < ApplicationController
     respond_to do |format|
       if @content.update(content_params)
         format.html { redirect_to content_url(@content), notice: "Content was successfully updated." }
-        format.json { render :show, status: :ok, location: @content }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @content.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -53,7 +49,6 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to contents_url, notice: "Content was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
