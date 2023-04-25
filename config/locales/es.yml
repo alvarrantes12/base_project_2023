@@ -6,6 +6,7 @@ es:
     save: Guardar
     delete: Eliminar
     create: Crear
+    cruds_avalible: CRUDs Disponibles
   activerecord:
     attributes:
       content:
