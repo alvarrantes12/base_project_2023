@@ -7,8 +7,9 @@ es:
     save: Guardar
     delete: Eliminar
     create: crear
+    cruds_available: CRUDS disponibles
   activerecord:
-    atributtes:
+    attributes:
       content:
         title: Título
         description: Descripción
