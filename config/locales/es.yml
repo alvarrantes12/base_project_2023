@@ -4,16 +4,22 @@ es:
     new_model: Nuevo %{model}
     show: Mostrar
     edit: Editar
+    save: Guardar
     delete: Eliminar
     create: Crear
+    cruds_available: CRUDs Disponibles
+    confirm: Esta seguro?
+    ok: Si
+    cancel: No
   activerecord:
-    content:
-      title: Título
-      description: Descripción
-      start_date: Fecha de inicio
-      end_date: Fecha de terminacion.
-  nodules:
-    content:
-      one: Contenido
-      other: Contenidos
+    attributes:
+      content:
+        title: Título
+        description: Descripción
+        start_date: Fecha de inicio
+        end_date: Fecha de terminacion
+    modules:
+      content:
+        one: Contenido
+        other: Contenidos
   errors:

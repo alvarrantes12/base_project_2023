@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      content:
+        title: ""
+    modules:
+      content:
+        other: ""
