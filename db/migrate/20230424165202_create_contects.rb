@@ -5,7 +5,7 @@ class CreateContects < ActiveRecord::Migration[7.0]
       t.string :description
       t.string :text
       t.datetime :start_date
-      t.string :end_date_datetime
+      t.string :end_date
 
       t.timestamps
     end
