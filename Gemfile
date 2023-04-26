@@ -17,10 +17,14 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "haml-rails"
+  gem "html2haml"
   gem 'rspec-rails'
+  gem 'rubocop', require: false
 end
 
 group :development do
+  gem "pry"
   gem "web-console"
 end
 
