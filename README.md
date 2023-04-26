@@ -1,8 +1,8 @@
-Este README contiene los pasos necesarios para poder levantar la aplicación.
+Este README contiene los pasos necesarios para poder levantar la aplicaciÃÂÃÂÃÂÃÂ³n.
 
 Todos los comandos se deben de correr en la consola dentro del directorio del proyecto
 
-Ruby version: 3.2.0 (para colocar esta versión por defecto en sus computadora corra rvm use default 3.2.0)
+Ruby version: 3.2.0 (para colocar esta versiÃÂÃÂÃÂÃÂ³n por defecto en sus computadora corra rvm use default 3.2.0)
 
 Instalar todas las gemas: bundle install
 

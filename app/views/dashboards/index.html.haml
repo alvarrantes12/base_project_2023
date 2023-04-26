@@ -1,9 +1,10 @@
 .div.m-4
   %h1.mb-4
-    = "Crud disponibles"
+    = t('application.cruds_avaible')
+
 
 .float-start.m-4
-  = link_to "Contenidos", root_path, class: 'btn btn-danger'
+  = link_to t('activerecord.modules.content.other'), contents_path, class: 'btn btn-info'
 
 
   

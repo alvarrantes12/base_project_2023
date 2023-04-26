@@ -2,3 +2,16 @@
 .div.m-4
   .page.header
   %h1.mb-4
+   t('application.list.of',model: t('activerecord.modules.content,other'))
+   .float-end
+   =link_to t('applicatio.create'), new_content_path, clas: "btn btn-primary"
+
+
+%table.table.table-striped
+  %thread
+    %tr 
+      %th = t('activerecord.attibutes.content.tittle')
+  %tbody
+    -@contents.each do |content|
+      %tr
+        %td = content.tittle
