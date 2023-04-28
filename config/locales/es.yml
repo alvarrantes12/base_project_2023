@@ -15,8 +15,8 @@ es:
         description: Descripcion
         start_date: Fecha de inicio
         end_date: Fecha de termino
-  modules:
-      content:
-        one: Contenido
-        other: Contenidos
+    modules:
+    content:
+      one: Contenido
+      other: Contenidos
   errors:
