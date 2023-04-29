@@ -12,9 +12,9 @@
         %th= t('activerecord.attributes.content.description')
         %th= t('activerecord.attributes.content.start_date')
         %th= t('activerecord.attributes.content.end_date')
-        %th=
-        %th=
-        %th=
+        %th
+        %th
+        %th
     %tbody
       -@contents.each do |content|
         %tr
@@ -22,6 +22,6 @@
           %td= content.description
           %td= content.start_date.strftime("%d/%m/%Y %I:%M %P")
           %td= content.end_date.strftime("%d/%m/%Y %I:%M %P")
-          %td= link_to t('application.show'), content, class: "tbn btn-info"
-          %td= link_to t('application.edit'), edit_content_path(content), class: "tbn btn-success"
-          %td= link_to t('application.delete'), content, class: "tbn btn-danger", data: {confirm: {t('application.delete'), accept: t('application.ok'),reject: t('application.cancel')}}
+          %td= link_to t('application.show'), content, class: "btn btn-info"
+          %th= link_to t('application.edit'), edit_content_path(content), class: "btn btn-success"
+          %th= button_to t('application.delete'), content, method: :delete, class: "btn btn-danger"
