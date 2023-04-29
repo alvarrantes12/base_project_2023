@@ -8,6 +8,9 @@ es:
     delete: Eliminar
     create: Crear
     cruds-available: CRUDs Disponibles
+    can_not_be_saved: No se pudo guardar
+    select: Seleccione
+    back: Atrás
   activerecord:
     attributes:
       content:
@@ -15,6 +18,10 @@ es:
         description: Descripción
         start_date: Fecha de inicio
         end_date: Fecha de termino
+        types: 
+          video: Video
+          streaming: En vivo
+          image: Imagen
     modules:
       content:
         one: Contenido
