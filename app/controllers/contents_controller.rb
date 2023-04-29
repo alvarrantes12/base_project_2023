@@ -2,7 +2,6 @@ class ContentsController < ApplicationController
   before_action :set_content, only: %i[ show edit update destroy ]
 
   def index
-    #binding.pry
     @contents = Content.all
   end
 
@@ -50,6 +49,6 @@ class ContentsController < ApplicationController
     end
 
     def content_params
-      params.require(:content).permit(:title, :description, :start_date, :end_date)
+      params.require(:content).permit(:title, :description, :start_date, :end_date, :special_type)
     end
 end
