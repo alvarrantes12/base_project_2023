@@ -4,7 +4,8 @@ class Content < ApplicationRecord
     validates :description, presence: true
     validates :start_date, presence: true
     validates :end_date, presence: true
-
+    
+    enum special_type: {'video': 0, 'streaming': 1, 'image': 2}
 end
 
-# title, description,start_date estan en migrate 
+ 
