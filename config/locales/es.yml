@@ -29,7 +29,7 @@ es:
       patient:
         first_name: Nombre
         last_name: Apellido
-      appoinment:
+      appointment:
         doctor: Doctor
         patient: Paciente
         date: Fecha
@@ -45,7 +45,7 @@ es:
         new: Nuevo Paciente
         one: Paciente
         other: Pacientes
-      appoinment:
+      appointment:
         new: Nueva Cita
         one: Cita
         other: Citas

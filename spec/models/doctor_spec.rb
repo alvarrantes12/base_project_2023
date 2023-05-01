@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Doctor, type: :model do
   subject {
-    described_class.new(first_name: "Nombre Prueba",
+    described_class.new(first_name: "Prueba",
                         last_name: "Apellido Prueba",
                         code: "12345")
   }
