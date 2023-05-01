@@ -1,12 +1,13 @@
 es:
   application:
-    list_of: Lista del %{model}
+    list_of: Lista de %{model}
     new_model: Nuevo %{model}
     show: Mostrar
     edit: Editar
     save: Guardar
     delete: Eliminar
     create: Crear
+    cruds_available: CRUDs disponibles
   activerecord:
     attributes:
       content:
