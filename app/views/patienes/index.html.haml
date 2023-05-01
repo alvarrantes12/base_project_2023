@@ -1,0 +1,25 @@
+%p{:style => "color: green"}= notice
+.div.m-4
+  .page.header
+    %h1.mb-4
+      = t('application.list_of', model: t('activerecord.modules.patiene.other'))
+    .float-end.pb-4
+      = link_to t('application.create'), new_patiene_path, class: "btn btn-primary"
+
+  %table.table.table-striped
+    %thead
+      %tr
+        %th= t('activerecord.attributes.patiene.first_name')
+        %th= t('activerecord.attributes.patiene.last_name')
+        %th
+        %th
+        %th
+
+    %tbody
+      - @patienes.each do |patiene|
+        %tr
+          %td= patiene.first_name
+          %td= patiene.last_name
+          %td= link_to t('application.show'), patiene, class: "btn btn-info"
+          %td= link_to t('application.edit'), edit_patiene_path(patiene),  class: "btn btn-success"
+          %td= link_to t('application.delete'), patiene, method: :delete, class: "btn btn-danger"
