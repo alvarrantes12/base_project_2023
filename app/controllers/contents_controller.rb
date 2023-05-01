@@ -3,6 +3,7 @@ class ContentsController < ApplicationController
 
   # GET /contents or /contents.json
   def index
+    binding.pry
     @contents = Content.all
   end
 
