@@ -2,8 +2,6 @@ class ContentsController < ApplicationController
   before_action :set_content, only: %i[ show edit update destroy ]
 
   def index
-    #deterner la ejecucion, e ir a probar en consola lo que desee, solo para desarrollo
-    #binding.pry
     @contents = Content.all
   end
 

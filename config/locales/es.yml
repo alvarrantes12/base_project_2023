@@ -1,6 +1,6 @@
 es:
   application:
-    list_of: Lista del %{model}
+    list_of: Lista de %{model}
     new_model: Nuevo %{model}
     show: Mostrar
     edit: Editar
@@ -22,8 +22,64 @@ es:
           video: Video
           streaming: En vivo
           image: Imagen
+      doctor:
+        first_name: Nombre
+        last_name: Apellido
+        code: Codigo
+      patient:
+        first_name: Nombre
+        last_name: Apellido
+      appoinment:
+        doctor: Doctor
+        patient: Paciente
+        date: Fecha
     modules:
       content:
         one: Contenido
         other: Contenidos
+      doctor:
+        new: Nuevo Doctor
+        one: Doctor
+        other: Doctores
+      patient:
+        new: Nuevo Paciente
+        one: Paciente
+        other: Pacientes
+      appoinment:
+        new: Nueva Cita
+        one: Cita
+        other: Citas
     errors:
+      models:
+        content:
+          attributes:
+            title:
+              blank: vacío
+            description: 
+              blank: vacía
+            start_date: 
+              blank: vacía
+            end_date: 
+              blank: vacía
+        doctor:
+          attributes:
+            first_name:
+              blank: vacío
+            last_name: 
+              blank: vacío
+              too_short: no cumple con el minimo de caracteres 
+            code: 
+              blank: vacío
+        patient:
+          attributes:
+            first_name:
+              blank: vacío
+            last_name: 
+              blank: vacío
+              too_short: no cumple con el minimo de caracteres
+        appointment:
+          attributes:
+            doctor:
+              required: requerido para crear cita
+            patient: 
+              required: requerido para crear cita 
