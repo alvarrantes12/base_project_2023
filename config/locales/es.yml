@@ -1,6 +1,6 @@
 es:
   application:
-    list_of: Lista del %{model}
+    list_of: Lista de %{model}
     new_model: Nuevo %{model}
     show: Mostrar
     edit: Editar
@@ -17,14 +17,66 @@ es:
         title: Título
         description: Descripción
         start_date: Fecha de inicio
-        end_date: Decha de termino
+        end_date: Fecha de termino
+        first_name: Nombre
+        last_name: Apellido
+        code: Codigo
+        fecha: Fecha de Cita
         types:
           video: video
           streaming: En vivo
           image: Imagen 
     modules:
       content:
+        new: Agregar Contenido
         one: Contenido
         other: Contenidos
+      doctor:
+        new: Listar Doctor
+        one: Doctor
+        other: Doctores
+      patient:
+        new: Listar Paciente
+        one: Paciente
+        other: Pacientes
+      appointment:
+        one: Cita
+        other: Citas
+        new: Agregar Cita
     errors:
+      models:
+        doctor:
+          attributes:
+            first_name:
+              blank: vacío
+            last_name:
+              blank: vacío
+              too_short: no cumple reglamentos de longitud
+            code:
+              blank: vacío
+        patient:
+          attributes:
+            first_name:
+              blank: vacío
+            last_name:
+              blank: vacío
+              too_short: no cumple reglamentos de longitud
+        appointment:
+          attributes:
+            doctor:
+              required: vacío
+            patient:
+              required: vacío
+
+        content:
+          attributes:
+            title:
+              blank: vacío
+            description:
+              blank: vacío
+            start_date: 
+              blank: vacío
+            end_date:
+              blank: vacío
+          
 
