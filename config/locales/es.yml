@@ -63,11 +63,8 @@ es:
               too_short: no cumple reglamentos de longitud
         appointment:
           attributes:
-            doctor:
-              required: vacío
-            patient:
-              required: vacío
-
+            date:
+              blank: vacío
         content:
           attributes:
             title:
