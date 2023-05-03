@@ -1,0 +1,13 @@
+%b
+  = t('activerecord.attributes.patient.first_name')
+  = ':'
+  = @patient.first_name
+  %br
+  = t('activerecord.attributes.patient.last_name')
+  = ':'
+  = @patient.last_name
+  %br
+
+= link_to t('application.edit'), edit_patient_path(@patient)
+\|
+= link_to t('application.back'), patients_path

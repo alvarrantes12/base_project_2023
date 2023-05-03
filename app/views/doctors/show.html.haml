@@ -1,0 +1,17 @@
+%b
+  = t('activerecord.attributes.doctor.first_name')
+  = ':'
+  = @doctor.first_name
+  %br
+  = t('activerecord.attributes.doctor.last_name')
+  = ':'
+  = @doctor.last_name
+  %br
+  = t('activerecord.attributes.doctor.code')
+  = ':'
+  = @doctor.code
+  %br
+
+= link_to t('application.edit'), edit_doctor_path(@doctor)
+\|
+= link_to t('application.back'), doctors_path

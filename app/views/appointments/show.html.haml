@@ -1,0 +1,17 @@
+%b
+  = t('activerecord.attributes.appointment.date')
+  = ':'
+  = @appointment.date.strftime("%d/%m/%Y %I:%M %P")
+  %br
+  = t('activerecord.attributes.appointment.doctor_name')
+  = ':'
+  = @appointment.doctor.first_name
+  %br
+  = t('activerecord.attributes.appointment.patient_name')
+  = ':'
+  = @appointment.patient.first_name
+  %br
+  
+= link_to t('application.edit'), edit_appointment_path(@appointment)
+\|
+= link_to t('application.back'), appointments_path

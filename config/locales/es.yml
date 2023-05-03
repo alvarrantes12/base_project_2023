@@ -1,7 +1,8 @@
 es:
   application:
-    list_of: Lista del %{model}
-    new_model: Nuevo modelo %{model}
+    list_of: Lista de %{model}
+    new_model: Nuevo %{model}
+    edit_model: Editar %{model}
     show: Mostrar
     edit: Editar
     save: Guardar
@@ -14,16 +15,70 @@ es:
   activerecord:
     attributes:
       content:
-        title: Titulo
-        description: Descripcion
+        title: Título
+        description: Descripción
         start_date: Fecha de inicio
         end_date: Fecha de termino
+        special_type: Tipo contenido
         types:
           video: Video
           streaming: En vivo
           image: Imagen
+      doctor:
+        first_name: Nombre
+        last_name: Apellido
+        code: Código
+      patient:
+        first_name: Nombre
+        last_name: Apellido
+      appointment:
+        doctor_name: Nombre del Doctor
+        patient_name: Nombre del Paciente
+        date: Fecha
     modules:
       content:
         one: Contenido
         other: Contenidos
+      doctor:
+        one: Doctor
+        other: Doctores
+      patient:
+        one: Paciente
+        other: Pacientes
+      appointment:
+        one: Cita
+        other: Citas
     errors:
+      models:
+        content:
+          attributes:
+            title:
+              blank: vacío
+            description:
+              blank: vacía
+            start_date: 
+              blank: vacía
+            end_date: 
+              blank: vacía
+        doctor:
+          attributes:
+            first_name:
+              blank: vacío
+            last_name:
+              blank: vacío
+              too_short: muy corto
+            code:
+              blank: vacío
+        patient:
+          attributes:
+            first_name:
+              blank: vacío
+            last_name:
+              blank: vacío
+              too_short: muy corto
+        appointment:
+          attributes:
+            doctor:
+              required: requerido
+            patient:
+              required: requerido
