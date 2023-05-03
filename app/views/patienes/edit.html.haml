@@ -1,7 +1,4 @@
-%h1= t('actions.edit.patiene')
+%h1= t('application.editing_model', model: t('activerecord.modules.patiene.one'))
 
-= render 'form'
+= render "form", patiene: @patiene
 
-= link_to 'Show', @patiene
-\|
-= link_to 'Back', patienes_path

@@ -1,6 +1,7 @@
 es:
   application:
     list_of: Lista de %{model}
+    editing_model: Editando %{model}
     new_model: Nuevo %{model}
     new_model2: Nueva %{model}
     show: Mostrar
@@ -19,7 +20,8 @@ es:
         description: Descripción
         start_date: Fecha de inicio
         end_date: Fecha de termino
-        special_type:
+        special_type: Tipo de contenido
+        special_types:
           video: Video
           streaming: En vivo
           image: Imagen
@@ -81,10 +83,4 @@ es:
             last_name:
               blank: sin agregar
               too_short: demasiado corto
-  actions:
-    edit:
-      appointment: Editando Cita
-      content: Editando Contenido
-      doctor: Editando Doctor
-      patiene: Editando Paciente
 

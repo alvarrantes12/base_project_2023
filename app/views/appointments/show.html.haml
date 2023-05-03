@@ -1,13 +1,10 @@
 %h1= t('activerecord.modules.appointment.one')
 
-%p#notice= notice
-
+%p{:style => "color: green"}= notice
 %p
-  %b
-    = t('activerecord.attributes.appointment.date')
-  %b :
-  %br
-    = @appointment.date.strftime("%d/%m/%Y %I:%M %P")
+  %strong= t('activerecord.attributes.appointment.date')
+  = ':'
+  = @appointment.date.strftime("%d/%m/%Y %I:%M %P")
 
 = link_to 'Edit', edit_appointment_path(@appointment)
 \|

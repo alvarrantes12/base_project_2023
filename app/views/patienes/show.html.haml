@@ -1,19 +1,15 @@
 %h1= t('activerecord.modules.patiene.one')
 
-%p#notice= notice
+%p{:style => "color: green"}= notice
 
 %p
-  %b 
-    = t('activerecord.attributes.patiene.first_name') 
-  %b :
-  %br
-    = @patiene.first_name
+  %strong= t('activerecord.attributes.patiene.first_name') 
+  = ':'
+  = @patiene.first_name
 %p
-  %b 
-    = t('activerecord.attributes.patiene.last_name')
-  %b :
-  %br
-    = @patiene.last_name
+  %strong= t('activerecord.attributes.patiene.last_name') 
+  = ':'
+  = @patiene.last_name
 
 = link_to 'Edit', edit_patiene_path(@patiene)
 \|

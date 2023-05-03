@@ -1,8 +1,4 @@
-%h1= t('actions.edit.appointment')
+%h1= t('application.editing_model', model: t('activerecord.modules.appointment.one'))
 
-= render 'form'
-
-= link_to 'Show', @appointment
-\|
-= link_to 'Back', appointments_path
+= render "form", appointment: @appointment
 
