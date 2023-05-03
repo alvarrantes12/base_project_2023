@@ -1,14 +1,23 @@
 %p#notice= notice
 
 %p
-  %b First name:
-  = @doctor.first_name
+  %b
+    = t('activerecord.attributes.doctor.first_name')
+  %b :
+  %br
+    = @doctor.first_name
 %p
-  %b Last name:
-  = @doctor.last_name
+  %b
+    = t('activerecord.attributes.doctor.last_name')
+  %b :
+  %br
+    = @doctor.last_name
 %p
-  %b Code:
-  = @doctor.code
+  %b 
+    = t('activerecord.attributes.doctor.code')
+  %b :
+  %br
+    = @doctor.code
 
 = link_to 'Edit', edit_doctor_path(@doctor)
 \|

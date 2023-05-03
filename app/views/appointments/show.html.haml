@@ -1,8 +1,13 @@
+%h1= t('activerecord.modules.appointment.one')
+
 %p#notice= notice
 
 %p
-  %b Date:
-  = @appointment.date
+  %b
+    = t('activerecord.attributes.appointment.date')
+  %b :
+  %br
+    = @appointment.date.strftime("%d/%m/%Y %I:%M %P")
 
 = link_to 'Edit', edit_appointment_path(@appointment)
 \|

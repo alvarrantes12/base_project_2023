@@ -19,7 +19,7 @@ es:
         description: Descripción
         start_date: Fecha de inicio
         end_date: Fecha de termino
-        types: 
+        special_type:
           video: Video
           streaming: En vivo
           image: Imagen
@@ -81,3 +81,10 @@ es:
             last_name:
               blank: sin agregar
               too_short: demasiado corto
+  actions:
+    edit:
+      appointment: Editando Cita
+      content: Editando Contenido
+      doctor: Editando Doctor
+      patiene: Editando Paciente
+
