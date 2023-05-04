@@ -1,0 +1,19 @@
+%p#notice= notice
+.dif.m-4
+  .page.header
+    %h1.mb-4
+      = t('application.show')
+    %p
+      %b= t('activerecord.attributes.doctor.first_name') 
+      \:
+      = @doctor.first_name
+    %p
+      %b= t('activerecord.attributes.doctor.last_name')
+      \:
+      = @doctor.last_name
+    %p
+      %b= t('activerecord.attributes.doctor.code')
+      \:
+      = @doctor.code
+    = link_to t('application.edit'), edit_doctor_path(@doctor), class: "btn btn-success"
+    = link_to t('application.back'), doctors_path, class: "btn btn-secondary btn-block"

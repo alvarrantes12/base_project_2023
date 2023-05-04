@@ -1,0 +1,11 @@
+%p#notice= notice
+.dif.m-4
+  .page.header
+    %h1.mb-4
+      = t('application.show')
+    %p 
+      %b= t('activerecord.attributes.appointment.date')
+      \:
+      = @appointment.date.strftime("%d/%m/%Y %I:%M %P")
+    = link_to t('application.edit'), edit_appointment_path(@appointment), class: "btn btn-success"
+    = link_to 'Back', appointments_path, class: "btn btn-secondary btn-block"

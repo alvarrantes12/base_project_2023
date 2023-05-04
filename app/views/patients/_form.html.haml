@@ -1,0 +1,21 @@
+= form_for @patient do |f|
+  - if @patient.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@patient.errors.count, "error")} prohibited this patient from being saved:"
+      %ul
+        - @patient.errors.full_messages.each do |message|
+          %li= message
+
+  .field.mx-4
+    = f.label :first_name, class: "form-label required"
+    .div.w-25
+      = f.text_field :first_name, autofocus: true, class: "form-control"
+
+  .field.mx-4
+    = f.label :last_name, class: "form.label required"
+    .div.w-25
+      = f.text_field :last_name, autofocus:true, class: "form-control"
+  .actions.mx-4.my-4
+    = link_to t('application.back'), patients_path, class: "btn btn-secondary btn-block"
+    = button_tag t('application.save'), class: "btn btn-outline-success btn-block"
+    
