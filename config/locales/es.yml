@@ -22,8 +22,21 @@ es:
           video: Video
           streaming: En vivo
           imagen: Imagen
+      doctor:
+        first_name: Nombre
+        last_name: Apellido
+        code: Código
+      patient:
+        first_name: Nombre
+        last_name: Apellido
     modules:
       content:
         one: Contenido
         other: Contenidos
+      doctor:
+        one: Doctor
+        other: Doctores
+      patient:
+        one: Paciente
+        other: Pacientes
     errors:
