@@ -2,6 +2,7 @@ es:
   application:
     list_of: Lista de %{model}
     new_model: Nuevo %{model}
+    edit_model: Editar %{model}
     show: Mostrar
     edit: Editar
     save: Guardar
@@ -18,12 +19,56 @@ es:
         description: Descripción
         start_date: Fecha de inicio
         end_date: Fecha de termino
+        special_type: Dato especial
         types:
           video: Video
           streaming: En vivo
           image: Imagen
+      appointment:
+        date: Fecha
+        doctor: Doctor
+        patient: Paciente
+      doctor:
+        first_name: Primer nombre
+        last_name: Apellido
+        code: Código
+      patient:
+        first_name: Primer nombre
+        last_name: Apellido
     modules:
       content:
         one: Contenido
         other: Contenidos
+      appointment:
+        one: Cita
+        other: Citas
+      doctor:
+        one: Doctor
+        other: Doctores
+      patient:
+        one: Paciente
+        other: Pacientes
     errors:
+      models:
+        appointment:
+          attributes:
+            doctor:
+              required: Requerido
+            patient:
+              required: Requerido
+        doctor:
+          attributes:
+            first_name:
+              blank: Vacío
+            last_name:
+              blank: Vacío
+              too_short: Muy corto
+            code:
+              blank: Vacío
+        patient:
+          attributes:
+            first_name:
+              blank: Vacío
+            last_name:
+              blank: Vacío
+              too_short: Muy corto

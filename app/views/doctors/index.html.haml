@@ -1,25 +1,26 @@
-%h1 Listing doctors
+%p{:style => "color: green"}= notice
+.div.m-4
+  .page.header
+    %h1.mb-4
+      = t('application.list_of', model: t('activerecord.modules.doctor.other'))
+    .float-end.pb-4
+      = link_to t('application.create'), new_doctor_path, class: "btn btn-primary"
 
-%table
-  %thead
-    %tr
-      %th First name
-      %th Last name
-      %th Code
-      %th
-      %th
-      %th
-
-  %tbody
-    - @doctors.each do |doctor|
+  %table.table.table-striped
+    %thread
       %tr
-        %td= doctor.first_name
-        %td= doctor.last_name
-        %td= doctor.code
-        %td= link_to 'Show', doctor
-        %td= link_to 'Edit', edit_doctor_path(doctor)
-        %td= link_to 'Destroy', doctor, method: :delete, data: { confirm: 'Are you sure?' }
-
-%br
-
-= link_to 'New Doctor', new_doctor_path
+        %th= t('activerecord.attributes.doctor.code')
+        %th= t('activerecord.attributes.doctor.first_name')
+        %th= t('activerecord.attributes.doctor.last_name')
+        %th
+        %th
+        %th
+    %tbody
+      -@doctors.each do |doctor|
+        %tr
+          %td= doctor.code
+          %td= doctor.first_name
+          %td= doctor.last_name
+          %td= link_to t('application.show'), doctor, class: "btn btn-info"
+          %th= link_to t('application.edit'), edit_doctor_path(doctor), class: "btn btn-success"
+          %th= button_to t('application.delete'), doctor, method: :delete, class: "btn btn-danger"

@@ -1,7 +1,4 @@
-%h1 Editing patient
+%h1= t('application.edit_model', model: t('activerecord.modules.patient.one'))
 
 = render 'form'
 
-= link_to 'Show', @patient
-\|
-= link_to 'Back', patients_path
