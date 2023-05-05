@@ -1,7 +1,12 @@
 es:
   application:
-    list_of: Lista del %{model}
+    list_of: Lista de %{model}
     new_model: Nuevo %{model}
+    edit_model: Editar %{model}
+    destroy_model: Destruir %{model}
+    create_message: "%{model} creado con exito" 
+    update_message: "%{model} actualizado con exito" 
+    delete_message: "%{model} eliminado con exito" 
     show: Mostrar
     edit: Editar
     save: Guardar
@@ -18,12 +23,37 @@ es:
         description: Descripción
         start_date: Fecha de inicio
         end_date: Fecha de termino
+        special_type: Tipo especial
         types: 
           video: Video
           streaming: En vivo
           image: Imagen
+      appointment:
+        date: Fecha
+        doctor: Doctor
+        patient: Paciente
+      doctor:
+        first_name: Nombre
+        last_name: Apellidos
+        code: Codigo
+      patient:
+        first_name: Nombre
+        last_name: Apellido
     modules:
       content:
         one: Contenido
         other: Contenidos
+      appointment:
+        one: Cita
+        other: Citas
+      doctor:
+        one: Doctor
+        other: Doctores
+      patient:
+        one: Paciente
+        other: Pacientes
     errors:
+      error_message_blank: Se requiere un %{model} para continuar
+      error_message_length_short: La longitud de %{model} es demasiado corta
+      error_message_length_long: La longitud de %{model} no debe ser superior a 8 caracteres
+      error_message_code_exists: Este codigo ya existe

@@ -1,0 +1,8 @@
+%p{:style => "color: green"}= notice
+= render @appointment
+%div
+    = link_to t('application.edit_model', model: t('activerecord.modules.appointment.one')), edit_appointment_path(@appointment)
+    |
+    \#{link_to t('application.back'), appointments_path}
+
+    \#{button_to t('application.destroy_model', model: t('activerecord.modules.appointment.one')), @appointment, method: :delete}

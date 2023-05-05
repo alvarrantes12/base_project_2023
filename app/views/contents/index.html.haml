@@ -9,11 +9,11 @@
 %table.table.table-striped
   %thread
     %tr
-      %th= t('activerecord.atributtes.content.title')
-      %th= t('activerecord.atributtes.content.description')
-      %th= t('activerecord.atributtes.content.start_date')
-      %th= t('activerecord.atributtes.content.end_date')
-      %th
+      %th= t('activerecord.attributes.content.title')
+      %th= t('activerecord.attributes.content.description')
+      %th= t('activerecord.attributes.content.start_date')
+      %th= t('activerecord.attributes.content.end_date')
+      %th= t('activerecord.attributes.content.special_type')
       %th
       %th
   %tbody
@@ -23,7 +23,7 @@
         %td= content.description
         %td= content.start_date.strftime("%d/%m/%Y %I:%M %P")
         %td= content.end_date.strftime("%d/%m/%Y %I:%M %P")
+        %td= content.special_type
         %td= link_to t('application.show'), content, class: "btn btn-info"
         %th= link_to t('application.edit'), edit_content_path(content), class: "btn btn-success"
         %th= button_to t('application.delete'), content, method: :delete, class: "btn btn-danger"
-                                          

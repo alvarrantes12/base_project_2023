@@ -6,4 +6,5 @@ class Content < ApplicationRecord
     validates :end_date, presence: true
 
     enum special_type: {'video': 0, 'streaming': 1, 'image': 2}
+    validates :special_type, presence: true
 end

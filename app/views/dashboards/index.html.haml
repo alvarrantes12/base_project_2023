@@ -1,6 +1,17 @@
-.div.m-4
-  %h1.mb-4
-    = t('application.cruds-available')  
+.row
+  .col-6
+    .div.m-4.mb-4
+      %h1
+        = t('application.cruds-available')
 
-.float-start.m-4
-  = link_to t('activerecord.modules.content.other'), contents_path, class: 'btn btn-danger'
+    .float-start.ml-4
+      = link_to t('activerecord.modules.content.other'), contents_path, class: 'btn btn-danger', style: 'margin-left: 10px;'
+
+    .float-start.ml-4
+      = link_to t('activerecord.modules.appointment.other'), appointments_path, class: 'btn btn-danger', style: 'margin-left: 10px;'
+
+    .float-start.ml-4
+      = link_to t('activerecord.modules.doctor.other'), doctors_path, class: 'btn btn-danger', style: 'margin-left: 10px;'
+    
+    .float-start.ml-4
+      = link_to t('activerecord.modules.patient.other'), patients_path, class: 'btn btn-danger', style: 'margin-left: 10px;'

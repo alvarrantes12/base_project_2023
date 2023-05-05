@@ -1,0 +1,10 @@
+%div{:id => "#{dom_id doctor}"}
+  %p
+    %strong= t('activerecord.attributes.doctor.first_name') +": "
+    = doctor.first_name
+  %p
+    %strong= t('activerecord.attributes.doctor.last_name') +": "
+    = doctor.last_name
+  %p
+    %strong= t('activerecord.attributes.doctor.code') +": "
+    = doctor.code

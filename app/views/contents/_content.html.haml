@@ -1,13 +1,16 @@
 %div{:id => "#{dom_id content}"}
   %p
-    %strong Title:
+    %strong= t('activerecord.attributes.content.title') +": "
     = content.title
   %p
-    %strong Description:
+    %strong= t('activerecord.attributes.content.description') +": "
     = content.description
   %p
-    %strong Start date:
+    %strong= t('activerecord.attributes.content.start_date') +": "
     = content.start_date
   %p
-    %strong End date:
+    %strong= t('activerecord.attributes.content.end_date') +": "
+    = content.end_date
+    %p
+    %strong= t('activerecord.attributes.content.special_type') +": "
     = content.end_date

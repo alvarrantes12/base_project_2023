@@ -1,0 +1,37 @@
+=form_for @patient, validate: true do |f|
+  -if @patient.errors.any?
+    .card.mx-4
+      .card-body
+        %div{style: 'color: red'}
+          %h2
+            = t('application.can_not_be_saved')
+          %ul
+            - @patient.errors.each do |error|
+              %li 
+                - if error.attribute == :first_name
+                  - if @patient.first_name.blank?
+                    = t('activerecord.errors.error_message_blank', model: t('activerecord.attributes.patient.first_name'))
+                  - elsif @patient.first_name.length > 8 
+                    = t('activerecord.errors.error_message_length_long', model: t('activerecord.attributes.patient.first_name'))
+                - elsif error.attribute == :last_name 
+                  - if @patient.last_name.blank? && @error_message.blank?
+                    = t('activerecord.errors.error_message_blank', model: t('activerecord.attributes.patient.last_name'))
+                    - @error_message = true
+                  - elsif @patient.last_name.length < 3
+                    = t('activerecord.errors.error_message_length_short', model: t('activerecord.attributes.patient.last_name'))
+
+  .form-group.mx-4
+    = f.label :first_name, class: "form-label required"
+  .div.w-25
+    = f.text_field :first_name, autofocus: true, class: "form-control"
+
+  .form-group.mx-4
+    = f.label :last_name, class: "form-label required"
+  .div.w-25
+    = f.text_field :last_name, autofocus: true, class: "form-control"
+
+  .row.mt-4
+    .col-3
+      = link_to t('application.back'), patients_path, class: "btn  btn-secondary btn-block"
+    .col-3
+      = button_tag t('application.save'), class: "btn btn-primary btn-block"
