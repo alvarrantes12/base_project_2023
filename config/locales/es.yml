@@ -1,22 +1,49 @@
 es:
   application:
-      list_of: Lista del %{model}
-      new_model: Nuevo %{model}
-      show: Mostrar
-      edit: Editar
-      save: Guardar
-      delete: Eliminar
-      create: Crear
-      cruds_available: CRUDs Disponibles
+    list_of: Lista del %{model}
+    new_model: Nuevo %{model}
+    show: Mostrar
+    edit: Editar
+    save: Guardar
+    delete: Eliminar
+    create: Crear
+    cruds_available: CRUDs Disponibles
+    can_not_be_saved: No se pudo guardar
+    select: Seleccione
+    back: Atrás
   activerecord:
     attributes:
       content:
-        title: Titulo
-        description: Descripcion
+        title: Título
+        description: Descripción
         start_date: Fecha de inicio
         end_date: Fecha de termino
+        types:
+          video: Video
+          streaming: En vivo
+          imagen: Imagen
+      doctor:
+        first_name: Nombre
+        last_name: Apellido
+        code: Código
+      patient:
+        first_name: Nombre
+        last_name: Apellido
+      appointment:
+        date: Fecha
+        doctor: Doctor
+        patient: Paciente
     modules:
-    content:
-      one: Contenido
-      other: Contenidos
-  errors:
+      content:
+        one: Contenido
+        other: Contenidos
+      doctor:
+        one: Doctor
+        other: Doctores
+      patient:
+        one: Paciente
+        other: Pacientes
+      appointment:
+        one: Cita
+        other: Citas
+    errors:
