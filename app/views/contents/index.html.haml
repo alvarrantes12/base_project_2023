@@ -25,3 +25,5 @@
           %td= link_to t('application.show'), content, class: "btn btn-info"
           %th= link_to t('application.edit'), edit_content_path(content), class: "btn btn-success"
           %th= button_to t('application.delete'), content, method: :delete, class: "btn btn-danger"
+          
+  = link_to t('application.back'), request.referrer, class: "btn btn-secondary"
