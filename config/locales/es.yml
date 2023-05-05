@@ -29,6 +29,10 @@ es:
       patient:
         first_name: Nombre
         last_name: Apellido
+      appointment:
+        date: Fecha
+        doctor: Doctor
+        patient: Paciente
     modules:
       content:
         one: Contenido
@@ -39,4 +43,7 @@ es:
       patient:
         one: Paciente
         other: Pacientes
+      appointment:
+        one: Cita
+        other: Citas
     errors:

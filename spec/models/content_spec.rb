@@ -10,7 +10,6 @@ RSpec.describe Content, type: :model do
 
   it "is valid with valid atributes" do
     expect(subject).to be_valid
-
   end
 
   it "is not valid without title" do
