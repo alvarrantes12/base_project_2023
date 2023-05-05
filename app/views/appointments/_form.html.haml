@@ -1,0 +1,30 @@
+=form_for @appointment, validates: true do |f|
+  -if @appointment.errors.any?
+    .card.mx-4
+      %div{style: 'color: red'}
+        %h2
+          = t('application.can_not_be_saved')
+        %ul
+          -  @appointment.errors.each do |error|
+            %li= error.full_message
+
+  .form-group.mx-4 
+    = f.label :date, class: "form-label required"
+    .div.w-25 
+      = f.datetime_field :date, autofocus: true, class: "form-control" 
+
+  .form-group.mx-4
+    = f.label :doctor, class: "form-label required"
+    .div.w-25
+      = f.select(:doctor_id, options_for_select(@doctors, @appointment.doctor), {prompt: t('application.select')}, class: "form-control")
+
+  .form-group.mx-4 
+    = f.label :patient, class: "form-label required"
+    .div.w-25 
+      = f.select(:patient_id, options_for_select(@patients, @appointment.patient), {prompt: t('application.select')}, class: "form-control")
+
+  .row.mt-4 
+    .offset-1.col-1 
+      = link_to t('application.back'), appointments_path, class: "btn btn-secondary btn-block" 
+    .col-2
+      = button_tag t('application.save'), class: "btn btn-outline-success btn-block"

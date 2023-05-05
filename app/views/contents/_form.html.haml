@@ -34,7 +34,7 @@
       = f.select(:special_type, options_for_select(special_types, @content.special_type), {prompt: t('application.select')}, class: "form-control")
 
   .row.mt-4 
-    .offset-3.col-3 
+    .offset-1.col-1 
       = link_to t('application.back'), contents_path, class: "btn btn-secondary btn-block" 
-    .col-3
+    .col-2
       = button_tag t('application.save'), class: "btn btn-outline-success btn-block"

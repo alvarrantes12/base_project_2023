@@ -1,0 +1,10 @@
+%div{:id => "#{dom_id appointment}"}
+  %p
+    %strong Doctor:
+    = appointment.doctor.first_name
+  %p
+    %strong Paciente:
+    = appointment.patient.first_name
+  %p
+    %strong Date:
+    = appointment.date
