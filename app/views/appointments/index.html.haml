@@ -1,0 +1,32 @@
+%p{:style => "color: green"}= notice
+.div.m-4
+  .page.header 
+    %h1.mb-4
+      = t('application.list_of', model: t('activerecord.modules.appointment.other'))
+    .float-end.pb-4
+      = link_to t('application.create'), new_appointment_path, class: "btn btn.primary"
+
+  %table.table.table-striped
+    %thread 
+      %tr
+        %th= t('activerecord.attributes.content.date')
+        %th= t('activerecord.attributes.content.doctors.first_name')
+        %th= t('activerecord.attributes.content.doctors.last_name')
+        %th= t('activerecord.attributes.content.patients.first_name')
+        %th= t('activerecord.attributes.content.patients.last_name')
+        %th 
+        %th
+        %th
+        %th
+    %tbody
+      -@appointments.each do |appointment|
+        %tr
+          %td= appointment.date.strftime("%d/%m/%Y %I:%M %P")
+          %td= appointment.doctor.first_name
+          %td= appointment.doctor.last_name
+          %td= appointment.patient.first_name
+          %td= appointment.patient.last_name
+          %td= link_to t('application.show'), appointment, class: "btn btn-info"
+          %td= link_to t('application.edit'), edit_appointment_path(appointment), class: "btn btn-succes"
+          %td= button_to t('application.delete'), appointment, method: :delete, class: "btn btn-danger" 
+          

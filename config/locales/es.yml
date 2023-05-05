@@ -9,6 +9,7 @@ es:
     create: Crear
     cruds_available: CRUD Disponibles
     can_not_be_save: No se pudo guardar
+    first_name_blank: Espacio en blanco
     select: Seleccione
     back: Atras
   activerecord:
@@ -18,15 +19,60 @@ es:
         description: Descripción
         start_date: Fecha de inicio
         end_date: Fecha de termino
+        doctor_id: Codigo del doctor
+        patient_id: Codigo del paciente
+        date: Fecha
+        id: Codigo de cita
+        doctors: 
+          first_name: Nombre doctor
+          last_name: Apellido
+        patients:
+          first_name: Nombre paciente
+          last_name: Apellido
+        code: codigo
+        
         types:
           video: Video
           streaming: En vivo
           image: Imagen
     modules:
+      appointment: 
+        other: Citas
+        doctor: Doctores
+        
+        patient: Pacientes
       content: 
         one: Contenido
         other: Contenidos
     errors:
+      models:
+        doctor:
+          attributes:
+            first_name: 
+              blank: "Falta el nombre"
+            last_name:
+              blank: "Falta el apellido"
+              too_short: Apellido muy corto
+            code: 
+              blank: "Falta el nombre"
+
+      models:
+        patient:
+          attributes:
+            first_name: 
+              blank: "Falta el nombre"
+            last_name:
+              blank: "Falta el apellido"
+              too_short: Apellido muy corto
+            
+
+
+            
+            
+      
+            
+
+      
 
 
   
