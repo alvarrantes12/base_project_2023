@@ -1,6 +1,6 @@
 es:
   application:
-    list_of: Lista del %{model}
+    list_of: Lista de %{model}
     new_model: Nuevo %{model}
     show: Mostrar
     edit: Editar
@@ -22,7 +22,14 @@ es:
           video: Video
           streaming: En vivo
           image: Imagen
+      appointment:
+        date: Fecha
+        doctor: Doctor
+        patient: Paciente
     modules:
+      appointment:
+        one: Cita
+        other: Citas
       content:
         one: Contenido
         other: Contenidos
