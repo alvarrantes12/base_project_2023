@@ -26,11 +26,41 @@ es:
         date: Fecha
         doctor: Doctor
         patient: Paciente
+      doctor:
+        first_name: Primer nombre
+        last_name: Apellido
+        code: Código
+      patient:
+        first_name: Primer nombre
+        last_name: Apellido
     modules:
       appointment:
         one: Cita
         other: Citas
+      doctor:
+        one: Doctor
+        other: Doctor
+      patient:
+        one: Paciente
+        other: Pacientes
       content:
         one: Contenido
         other: Contenidos
     errors:
+      models:
+        doctor:
+          attributes:
+            first_name:
+              blank: Vacío
+            last_name:
+              blank: Vacío
+              too_short: Muy corto
+            code:
+              blank: Vacío
+        patient:
+          attributes:
+            first_name:
+              blank: Vacío
+            last_name:
+              blank: Vacío
+              too_short: Muy corto

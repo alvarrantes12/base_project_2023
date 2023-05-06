@@ -1,23 +1,26 @@
-%h1 Listing patients
+%p{:style => "color: green"}= notice
+.div.m-4
+  .page.header
+    %h1.mb-4
+      = t('application.list_of', model: t('activerecord.modules.patient.other'))
+    .float-end.pb-4
+      = link_to t('application.create'), new_patient_path, class: "btn btn-primary"
 
-%table
-  %thead
-    %tr
-      %th First name
-      %th Last name
-      %th
-      %th
-      %th
-
-  %tbody
-    - @patients.each do |patient|
+  %table.table.table-striped
+    %thread
       %tr
-        %td= patient.first_name
-        %td= patient.last_name
-        %td= link_to 'Show', patient
-        %td= link_to 'Edit', edit_patient_path(patient)
-        %td= link_to 'Destroy', patient, method: :delete, data: { confirm: 'Are you sure?' }
+        %th= t('activerecord.atributes.patient.first_name')
+        %th= t('activerecord.atributes.patient.last_name')
+        %th
+        %th
+        %th
+    %tbody
+      -@patients.each do |patient|
+        %tr 
+          %td= patient.first_name
+          %td= patient.last_name
+          %td= link_to t('application.show'), patient, class: "btn btn-info"
+          %td= link_to t('application.edit'), edit_patient_path(patient), class: "btn btn-succes"
+          %td= button_to t('application.delete'), patient, method: :delete, class: "btn btn-danger"
 
-%br
 
-= link_to 'New Patient', new_patient_path
