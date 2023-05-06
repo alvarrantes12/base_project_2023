@@ -7,7 +7,7 @@
             = t('application.can_not_be_saved')
           %ul
             - @content.errors.each do |error|
-              %li error.full_message
+              %li = error.full_message
 
   .form-group.mx-4
     = f.label :title, class: "form-label required"
