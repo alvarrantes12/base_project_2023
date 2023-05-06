@@ -1,6 +1,6 @@
 es:
   application:
-    list_of: Lista del %{model}
+    list_of: Lista de %{model}
     new_model: Nuevo %{model}
     show: Mostrar
     edit: Editar
@@ -8,18 +8,50 @@ es:
     delete: Eliminar
     create: Crear
     cruds_available: CRUDs Disponibles
-    confirm: Esta seguro?
-    ok: Si
-    cancel: No
+    can_not_be_saved: No se pudo guardar
+    select: Seleccione
+    back: Atrás
+    error: Ha ocurrido un error
   activerecord:
     attributes:
+      appointment:
+        date: Fecha
+        doctor: Doctor
+        patient: Paciente
       content:
         title: Título
         description: Descripción
         start_date: Fecha de inicio
-        end_date: Fecha de terminacion
+        end_time: Fecha de termino
+        types:
+          video: Video
+          streaming: En vivo
+          image: Imagen
+      doctor:
+        first_name: Nombre
+        last_name: Apellido
+        code: Código
+      patient:
+        first_name: Nombre
+        last_name: Apellido
     modules:
+      appointment:
+        one: Cita
+        other: Citas
       content:
         one: Contenido
         other: Contenidos
-  errors:
+      doctor:
+        one: Doctor
+        other: Doctores
+      patient:
+        one: Paciente
+        other: Pacientes
+    errors:
+      models:
+        appointment:
+          attributes:
+            doctor:
+              required: "debe estar presente"
+            patient:
+              required: "debe estar presente"

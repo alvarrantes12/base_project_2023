@@ -38,3 +38,6 @@ en:
     modules:
       content:
         other: ""
+  application:
+    back: ""
+    save: ""

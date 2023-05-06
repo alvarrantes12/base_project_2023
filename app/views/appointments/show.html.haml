@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Date:
+  = @appointment.date
+
+= link_to t('application.edit'), edit_appointment_path(@appointment)
+\|
+= link_to t('application.back'), appointments_path
