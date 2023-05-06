@@ -58,6 +58,6 @@ class ContentsController < ApplicationController
     end
 
     def content_params
-      params.require(:content).permit(:tittle, :description, :start_date, :end_date)
+      params.require(:content).permit(:tittle, :description, :start_date, :end_date, :special_type)
     end
 end
