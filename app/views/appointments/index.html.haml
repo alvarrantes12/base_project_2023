@@ -18,9 +18,9 @@
     %tbody
       -@appointments.each do |appointment|
         %tr 
+          %td= appointment.date.strftime("%d/%m/%Y %I:%M %P")
           %td= appointment.doctor.first_name.concat(' ').concat(appointment.doctor.last_name)
           %td= appointment.patient.first_name.concat(' ').concat(appointment.patient.last_name)
-          %td= appointment.date.strftime("%d/%m/%Y %I:%M %P")
           %td= link_to t('application.show'), appointment, class: "btn btn-info"
           %th= link_to t('application.edit'), edit_appointment_path(appointment), class: "btn btn-success"
           %th= button_to t('application.delete'), appointment, method: :delete, class: "btn btn-danger"
