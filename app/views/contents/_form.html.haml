@@ -1,43 +1,51 @@
-=form_for @content, validate: true do |f|
+= form_for @content, validate: true do |f|
   -if @content.errors.any?
     .card.mx-4
       .card-body
-        %div{style: 'color:red'}
+        %div{style: 'color: red'}
           %h2
-            =t('application.can_not_be_saved')
-            %ul
-              - @content.errors.each do |error|
-                %li error.full_message
+            = t('application.can_not_be_saved')
+          %ul
+            - @content.errors.each do |error|
+              %li 
+                - if error.attribute == :title
+                  = t('activerecord.errors.error_message_blank', model: t('activerecord.attributes.content.title'))
+                - elsif error.attribute == :description
+                  = t('activerecord.errors.error_message_blank', model: t('activerecord.attributes.content.description'))
+                - elsif error.attribute == :start_date
+                  = t('activerecord.errors.error_message_blank', model: t('activerecord.attributes.content.start_date'))
+                - elsif error.attribute == :end_date
+                  = t('activerecord.errors.error_message_blank', model: t('activerecord.attributes.content.end_date'))
+                - elsif error.attribute == :special_type
+                  = t('activerecord.errors.error_message_blank', model: t('activerecord.attributes.content.special_type'))
 
-.form-group.mx4
-  = f.label :title, class: "form-label required"
-  .div.W-25
-    =f.text_field :title, autofocus: true, class: "form-control"
+  .form-group.mx-4
+    = f.label :title, class: "form-label required"
+  .div.w-25
+    = f.text_field :title, autofocus: true, class: "form-control"
 
-.form-group.mx4
-  = f.label :description, class: "form-label required"
-  .div.W-25
-    =f.text_field :description, autofocus: true, class: "form-control"
+  .form-group.mx-4
+    = f.label :description, class: "form-label required"
+  .div.w-25
+    = f.text_area :description, autofocus: true, class: "form-control"
 
-.form-group.mx4
-  = f.label :start_date, class: "form-label required"
-  .div.W-25
-    =f.datetime_field :start_date, autofocus: true, class: "form-control"
+  .form-group.mx-4
+    = f.label :start_date, class: "form-label required"
+  .div.w-25
+    = f.datetime_field :start_date, autofocus: true, class: "form-control"
 
-.form-group.mx4
-  = f.label :end_date, class: "form-label required"
-  .div.W-25
-    =f.datetime_field :end_date, autofocus: true, class: "form-control"
+  .form-group.mx-4
+    = f.label :end_date, class: "form-label required"
+  .div.w-25
+    = f.datetime_field :end_date, autofocus: true, class: "form-control"
 
-.form-group.mx4
-  = f.label :special_type, class: "form-label required"
-  .div.W-25
-    =f.select(:special_type, option_for_select(special_types, @content.special_type),{prompt:"Seleccione"}, class: "form-control")
+  .form-group.mx-4
+    = f.label :special_type, class: "form-label required"
+  .div.w-25
+    = f.select(:special_type, options_for_select(special_types, @content.special_type), {prompt: t('application.select')}, class: "form-control")
 
-.row.mt-4
-  .offset-3.col-3
-    = link_to t('application.back'), contents_path, class:"btn btn-secondary btn-block"
-  .col-3
-    =button_tag t('application.save'), class: "btn btn-outline-success btn-block"
-
-
+  .row.mt-4
+    .col-3
+      = link_to t('application.back'), contents_path, class: "btn  btn-secondary btn-block"
+    .col-3
+      = button_tag t('application.save'), class: "btn btn-primary btn-block"

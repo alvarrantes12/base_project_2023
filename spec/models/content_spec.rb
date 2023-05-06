@@ -1,11 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Content, type: :model do
-  subject { described_class.new(title: "Anything",
-                                description: "Lorem Ipsum",
-                                start_date: DateTime.now,
-                                end_date: DateTime.now + 1.week)
+  subject { 
+    described_class.new(title: "Anything",
+                        description: "Lorem Ipsum",
+                        start_date: DateTime.now,
+                        end_date: DateTime.now + 1.week)
   }
+
   it 'is valid with valid attributes ' do
     expect(subject).to be_valid
   end

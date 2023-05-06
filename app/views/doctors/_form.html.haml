@@ -1,0 +1,48 @@
+=form_for @doctor, validate: true do |f|
+  -if @doctor.errors.any?
+    .card.mx-4
+      .card-body
+        %div{style: 'color: red'}
+          %h2
+            = t('application.can_not_be_saved')
+          %ul
+            - @doctor.errors.each do |error|
+              %li 
+                - if error.attribute == :first_name
+                  - if @doctor.first_name.blank?
+                    = t('activerecord.errors.error_message_blank', model: t('activerecord.attributes.doctor.first_name'))
+                  - elsif @doctor.first_name.length > 8 
+                    = t('activerecord.errors.error_message_length_long', model: t('activerecord.attributes.doctor.first_name'))
+                - elsif error.attribute == :last_name 
+                  - if @doctor.last_name.blank? && @error_message.blank?
+                    = t('activerecord.errors.error_message_blank', model: t('activerecord.attributes.doctor.last_name'))
+                    - @error_message = true
+                  - elsif @doctor.last_name.length < 3
+                    = t('activerecord.errors.error_message_length_short', model: t('activerecord.attributes.doctor.last_name'))
+                - elsif error.attribute == :code
+                  - if @doctor.code.blank?
+                    = t('activerecord.errors.error_message_blank', model: t('activerecord.attributes.doctor.code'))
+                  - else
+                    = t('activerecord.errors.error_message_code_exists', model: t('activerecord.attributes.doctor.code'))
+
+
+  .form-group.mx-4
+    = f.label :first_name, class: "form-label required"
+  .div.w-25
+    = f.text_field :first_name, autofocus: true, class: "form-control"
+
+  .form-group.mx-4
+    = f.label :last_name, class: "form-label required"
+  .div.w-25
+    = f.text_field :last_name, autofocus: true, class: "form-control"
+
+  .form-group.mx-4
+    = f.label :code, class: "form-label required"
+  .div.w-25
+    = f.text_field :code, autofocus: true, class: "form-control"
+
+  .row.mt-4
+    .col-3
+      = link_to t('application.back'), doctors_path, class: "btn  btn-secondary btn-block"
+    .col-3
+      = button_tag t('application.save'), class: "btn btn-primary btn-block"
