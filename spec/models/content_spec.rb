@@ -5,7 +5,8 @@ RSpec.describe Content, type: :model do
     described_class.new(title: "Anything",
                         description: "Lorem ipsum",
                         start_date: DateTime.now,
-                        end_date: DateTime.now + 1.week)
+                        end_date: DateTime.now + 1.week,
+                        special_type: 1)
   }
 
   it "is valid with valid attributes" do
@@ -28,6 +29,10 @@ RSpec.describe Content, type: :model do
   end
   it "is not valid without end_date" do
     subject.end_date = nil
+    expect(subject).to_not be_valid
+  end
+  it "is not valid without special_type" do
+    subject.special_type = nil
     expect(subject).to_not be_valid
   end
 end
