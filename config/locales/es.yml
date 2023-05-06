@@ -2,6 +2,8 @@ es:
   application:
     list_of: Lista del %{model}
     new_model: Nuevo %{model}
+    editing: Editando %{model}
+    back_to: Volver a %{model}
     show: Mostrar
     edit: Editar
     save: Guardar
@@ -11,20 +13,63 @@ es:
     can_not_be_saved: No se pudo guardar
     select: Seleccione
     back: Atras
+    this: este
     
+  messages:
+    success:  
+      successfully_created: creado exitosamente
+      successfully_updated: actualizado con éxito
+      successfully_destroy: eliminado con éxito
+    
+
   activerecord:
     attributes:
       content:
         title: Titulo
-        description: Descricion
+        description: Descripcion
         start_date: Fecha de inicio
         end_date: Fecha de termino
+        special_type: Tipos especiales
         types:
           video: Video
           streaming: En vivo
           image: Imagen
+      appointment:
+        date: Fecha
+        name_doctor: Nombre de doctor
+        name_patient: Nombre de paciente
+        patient: Paciente
+
     modules:
       content:
-        one: Contenidos
+        one: Contenido
         other: Contenidos
+      appointment: 
+        new_appointment: Nueva Cita
+        one: Cita
+        other: Citas
+
     errors:
+      messages:
+        record_invalid: Registro inválido
+      models:
+        content:
+          attributes:
+            title:
+              blank: es requerido
+            description:
+              blank: es requerida
+            start_date:
+              blank: es requerida
+            end_date:
+              blank: es requerida
+
+        appointment:
+          attributes:
+            date:
+              blank: requerida
+            doctor:
+              required: es requerido
+            patient:
+              required: es requerido
+            

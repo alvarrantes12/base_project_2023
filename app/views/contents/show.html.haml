@@ -1,8 +1,14 @@
 %p{:style => "color: green"}= notice
 = render @content
-%div
-  = link_to "Edit this content", edit_content_path(@content)
-  |
-  \#{link_to "Back to contents", contents_path}
+
+.row.mt-4
+.offset-3.col-3 
+  = link_to t('application.back_to',model:t('activerecord.modules.content.other')), contents_path, class: "btn btn-secondary btn-block"
   
-  \#{button_to "Destroy this content", @content, method: :delete}
+
+%div
+  = link_to t('application.edit'), edit_content_path(@content)
+  |
+  \#{link_to t('application.back_to',model:t('activerecord.modules.content.other')), contents_path}
+  
+  \#{button_to t('application.delete')+" "+t('activerecord.modules.content.one'), @content, method: :delete}

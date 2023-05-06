@@ -26,4 +26,7 @@
           %td= content.end_date.strftime("%d/%m/%Y %I:%M %P")
           %td= link_to t('application.show'),content, class: "btn btn-info"
           %td= link_to t('application.edit'),edit_content_path(content), class: "btn btn-success"
-          %td= link_to t('application.delete'),content, class: "btn btn-danger"
+          %td= button_to t('application.delete'),(content), method: :delete, class: "btn btn-danger"
+.row.mt-4
+  .offset-3.col-3 
+    = link_to t('application.back'), root_path, class: "btn btn-secondary btn-block"

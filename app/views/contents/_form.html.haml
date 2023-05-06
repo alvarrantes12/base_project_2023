@@ -1,4 +1,4 @@
-=form_for @content, validate: true do |f|
+= form_for @content, validate: true do |f|
   -if @content.errors.any?
     .card.mx-4 
       .card-body 
@@ -7,7 +7,7 @@
             = t('application.can_not_be_saved')
           %ul
             - @content.errors.each do |error|
-              %li error.full_message
+              %li= error.full_message
   .form-group.mx-4 
     = f.label :title, class: "form-label required"
     .div.w-25 
@@ -35,6 +35,6 @@
 
   .row.mt-4
     .offset-3.col-3 
-      = link_to t('application.back'), contents_path, class: "btn btn-secondary btn-block"
+      = link_to t('application.back_to',model:t('activerecord.modules.content.other')), contents_path, class: "btn btn-secondary btn-block"
     .col-3 
       = button_tag t('application.save'), class: "btn btn-outline-success btn-block"
