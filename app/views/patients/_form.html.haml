@@ -6,11 +6,19 @@
         - @patient.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :first_name
-    = f.text_field :first_name
-  .field
-    = f.label :last_name
-    = f.text_field :last_name
-  .actions
-    = f.submit 'Save'
+  .form-group.mx-4
+    = f.label :first_name, class: "form-label required"
+    .div.w-25
+      =f.text_field :first_name, autofocus: true, class: "form-control"
+
+  .form-group.mx-4
+    = f.label :last_name, class: "form-label required"
+    .div.w-25
+      =f.text_field :last_name, autofocus: true, class: "form-control"
+
+  .row.mt-4
+    .offset-3.col-3
+      = link_to t('application.back'), contents_path, class: "btn btn-secondary btn-block"
+    .col-3
+      = button_tag t('application.save'), class: "btn btn-outline-success btn-block"
+ 

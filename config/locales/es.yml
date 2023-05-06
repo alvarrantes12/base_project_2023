@@ -22,10 +22,32 @@ es:
          video: Video
          streaming: En vivo
          image: Imagen
+      appointment:
+       date: Fecha
+       doctor_id: Identificación doctor
+       patient_id: Identificación paciente
+      patient:
+       first_name: Nombre
+       last_name: Apellido 
+      doctor:
+       first_name: Nombre
+       last_name: Apellido 
+       code: Código
+
     modules:
      content:
        one: Contenido
        other: Contenidos
+     appointment:
+       one: Cita
+       other: Citas
+     patient:
+       one: Paciente
+       other: Pacientes
+     doctor:
+       one: Doctor
+       other: Doctores
+      
     errors:
 
 
