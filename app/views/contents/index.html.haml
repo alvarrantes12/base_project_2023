@@ -7,12 +7,13 @@
       =link_to t('application.create'), new_content_path, class: "btn btn-primary"
     
   %table.table.table-striped
-    %thread
+    %thead
       %tr
-        %th= t('activerecord.atributtes.content.title')
-        %th= t('activerecord.atributtes.content.description')
-        %th= t('activerecord.atributtes.content.start_date')
-        %th= t('activerecord.atributtes.content.end_date')
+        %th= t('activerecord.attributes.content.title')
+        %th= t('activerecord.attributes.content.description')
+        %th= t('activerecord.attributes.content.special_type')
+        %th= t('activerecord.attributes.content.start_date')
+        %th= t('activerecord.attributes.content.end_date')
         %th
         %th
         %th
@@ -21,6 +22,7 @@
         %tr
           %td= content.title
           %td= content.description
+          %td= content.special_type
           %td= content.start_date.strftime("%d/%m/%Y %I:%M %P")
           %td= content.end_date.strftime("%d/%m/%Y %I:%M %P")
           %td= link_to t('application.show'), content, class: "btn btn-info"

@@ -1,0 +1,7 @@
+%h1= t('application.new_model', model: t('activerecord.modules.appointment.one'))
+= render "form", appointment: @appointment
+%br/
+%div
+  = link_to t('application.show_model', model: t('activerecord.modules.appointment.one')), @appointment
+  |
+  \#{link_to t('application.back_model', model: t('activerecord.modules.appointment.other')), appointments_path}

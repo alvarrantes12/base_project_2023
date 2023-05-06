@@ -1,0 +1,7 @@
+%h1= t('application.edit_model', model: t('activerecord.modules.doctor.one'))
+= render "form", doctor: @doctor
+%br/
+%div
+  = link_to t('application.show_model', model: t('activerecord.modules.doctor.one')), @doctor
+  |
+  \#{link_to t('application.back_model', model: t('activerecord.modules.doctor.other')), doctors_path}

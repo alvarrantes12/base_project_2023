@@ -1,7 +1,11 @@
 es:
   application:
-    list_of: Lista del %{model}
-    new_model: Nuevo %{model}
+    list_of: Lista de %{model}
+    new_model: Crear %{model}
+    edit_model: Editar %{model}
+    back_model: Volver a la lista de %{model}
+    delete_model: Eliminar %{model}
+    show_model: Mostrar %{model}
     show: Mostrar
     edit: Editar
     save: Guardar
@@ -11,19 +15,53 @@ es:
     can_not_be_saved: No se pudo guardar
     select: Seleccione
     back: Atrás
+    crud_message:
+      male:
+        create_message_model: "%{model} creado"
+        update_message_model: "%{model} actualizado"
+        delete_message_model: "%{model} eliminado"
+      female:
+        create_message_model: "%{model} creada"
+        update_message_model: "%{model} actualizada"
+        delete_message_model: "%{model} eliminada"
   activerecord:
     attributes:
       content:
         title: Título
         description: Descripción
         start_date: Fecha de inicio
-        end_date: Fecha de termino
+        end_date: Fecha que termino
+        special_type: Tipo especial
         types:
           video: Video
           streaming: En vivo
           image: Imagen
+      doctor:
+        first_name: Nombre
+        last_name: Apellido
+        code: Código
+      patient:
+        first_name: Nombre
+        last_name: Apellido
+      appointment:
+        date: Fecha
+        doctor: Doctor
+        patient: Paciente
     modules:
       content:
         one: Contenido
         other: Contenidos
+      doctor:
+        one: Doctor
+        other: Doctores
+      patient:
+        one: Paciente
+        other: Pacientes
+      appointment:
+        one: Cita
+        other: Citas
     errors:
+      required_error_model: "Se requiere %{model} para continuar"
+      maximum_long_error_model: El %{model} debe tener como máximo 8 caracteres
+      minimum_long_error_model: El %{model} debe tener como mínimo 3 caracteres
+      uniqueness_error_model: El %{model} debe ser único

@@ -6,8 +6,9 @@
           %h2
             = t('application.can_not_be_saved')
           %ul
-            -  @content.errors.each do |error|
-              %li error.full_message
+            - @content.errors.each do |error|
+              %li
+                = t('activerecord.errors.required_error_model.', model: t("activerecord.attributes.content.#{error.attribute}"))
 
   .form-group.mx-4
     = f.label :title, class: "form-label required"

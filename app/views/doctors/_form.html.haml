@@ -1,0 +1,43 @@
+= form_for @doctor do |f|
+  -if @doctor.errors.any?
+    .card.mx-4
+      .card-body
+        %div{style: 'color: red'}
+          %h2
+            = t('application.can_not_be_saved')
+          %ul
+            - @doctor.errors.map(&:attribute).uniq.each do |attribute|
+              %li
+                - if attribute == :first_name || attribute == :last_name
+                  - if @doctor.send(attribute).blank?
+                    = t('activerecord.errors.required_error_model', model: t("activerecord.attributes.doctor.#{attribute}"))
+                  - elsif @doctor.send(attribute).length < 3
+                    = t('activerecord.errors.minimum_long_error_model', model: t("activerecord.attributes.doctor.#{attribute}"))
+                  - else
+                    = t('activerecord.errors.maximum_long_error_model', model: t("activerecord.attributes.doctor.#{attribute}"))
+                - elsif attribute == :code
+                  - if @doctor.send(attribute).blank?
+                    = t('activerecord.errors.required_error_model', model: t("activerecord.attributes.doctor.#{attribute}"))
+                  - else
+                    = t('activerecord.errors.uniqueness_error_model', model: t("activerecord.attributes.doctor.#{attribute}"))
+                
+  .form-group.mx-4
+    = f.label :first_name, class: "form-label required"
+    .div.w-25
+      = f.text_field :first_name, autofocus: true, class: "form-control"
+
+  .form-group.mx-4
+    = f.label :last_name, class: "form-label required"
+    .div.w-25
+      = f.text_area :last_name, autofocus: true, class: "form-control"
+
+  .form-group.mx-4
+    = f.label :code, class: "form-label required"
+    .div.w-25
+      = f.text_area :code, autofocus: true, class: "form-control"
+      
+    .row.mt-4
+      .offset-3.col-3
+        = link_to t('application.back'), doctors_path, class: "btn btn-secondary btn-block"
+      .col-3
+        = button_tag t('application.save'), class: "btn btn-outline-success btn-block"

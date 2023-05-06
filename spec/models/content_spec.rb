@@ -5,6 +5,7 @@ RSpec.describe Content, type: :model do
   subject {
     described_class.new(title: "Anything",
                         description: "Lorem ipsum",
+                        special_type: 1,
                         start_date: DateTime.now,
                         end_date: DateTime.now + 1.week)
   }
@@ -20,6 +21,11 @@ RSpec.describe Content, type: :model do
 
   it "is not valid without description" do
     subject.description = nil
+    expect(subject).to_not be_valid
+  end
+
+  it "is not valid without special_type" do
+    subject.special_type = nil
     expect(subject).to_not be_valid
   end
 
