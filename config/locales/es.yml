@@ -7,13 +7,14 @@ es:
     save: Guardar
     delete: Eliminar
     create: Crear
+    cruds_avaliable: CRUDs Disponibles
   activerecord:
     attributes:
-      content:
-      title: Titulo
-      description: Descripcion
-      start_date: Fecha de inicio
-      end_date: Fecha de termino
+      content: 
+        title: Titulo
+        description: Descripcion
+        start_date: Fecha de inicio
+        end_date: Fecha de termino
     modules:
       content:
         one: Contenido
