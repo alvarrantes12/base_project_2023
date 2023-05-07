@@ -22,9 +22,37 @@ es:
           video: Video
           streaming: En vivo
           image: Imagen
+      appointment:
+        doctor: Doctor
+        patient: Paciente
+        date: Fecha
+      doctor:
+        first_name: Nombre
+        last_name: Apellido
+        code: Código
+      patient:
+        first_name: Nombre
+        last_name: Apellido
+
     modules:
       content:
         one: Contenido
         other: Contenidos
+      appointment:
+        one: Cita
+        other: Citas
+      doctor:
+        one: Doctor
+        other: Doctores
+      patient:
+        one: Paciente
+        other: Pacientes
     errors:
+      models:
+        appointment:
+          attributes:
+            doctor:
+              required: Campo requerido
+            patient:
+              required: Campo requerido
 
