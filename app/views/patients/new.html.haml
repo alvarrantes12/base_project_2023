@@ -1,5 +1,3 @@
-%h1 New patient
+%h1= t('application.new_model', model: t('activerecord.modules.patient.one'))
 
 = render 'form'
-
-= link_to 'Back', patients_path

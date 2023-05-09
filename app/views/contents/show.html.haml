@@ -1,8 +1,26 @@
+%h1= t('activerecord.modules.content.one')
+
 %p{:style => "color: green"}= notice
-= render @content
+%p
+  %strong= t('activerecord.attributes.content.title')
+  = ':'
+  = @content.title
+%p
+  %strong= t('activerecord.attributes.content.description')
+  = ':'
+  = @content.description
+%p
+  %strong= t('activerecord.attributes.content.start_date')
+  = ':'
+  = @content.start_date.strftime("%d/%m/%Y %I:%M %P")
+%p
+  %strong= t('activerecord.attributes.content.end_date')
+  = ':'
+  = @content.end_date.strftime("%d/%m/%Y %I:%M %P")
+
 %div
   = link_to "Edit this content", edit_content_path(@content)
   |
-  \#{link_to "Back to contents", contents_path}
-  
-  \#{button_to "Destroy this content", @content, method: :delete}
+  #{link_to "Back to contents", contents_path}
+
+  #{link_to "Destroy this content", @content, method: :delete}

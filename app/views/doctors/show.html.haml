@@ -1,12 +1,21 @@
-%p#notice= notice
+%h1= t('activerecord.modules.doctor.one')
+
+%p{:style => "color: green"}= notice
 
 %p
-  %b First name:
+  %strong= t('activerecord.attributes.doctor.first_name')
+  = ':'
   = @doctor.first_name
 %p
-  %b Last name:
+  %strong= t('activerecord.attributes.doctor.last_name')
+  = ':'
   = @doctor.last_name
+%p
+  %strong= t('activerecord.attributes.doctor.code')
+  = ':'
+  = @doctor.code
+
 
 = link_to 'Edit', edit_doctor_path(@doctor)
-\|
+|
 = link_to 'Back', doctors_path

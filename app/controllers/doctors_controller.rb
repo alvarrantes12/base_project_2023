@@ -1,25 +1,18 @@
 class DoctorsController < ApplicationController
   before_action :set_doctor, only: %i[ show edit update destroy ]
 
-  # GET /doctors or /doctors.json
   def index
     @doctors = Doctor.all
   end
 
-  # GET /doctors/1 or /doctors/1.json
-  def show
-  end
+  def show; end
 
-  # GET /doctors/new
   def new
     @doctor = Doctor.new
   end
 
-  # GET /doctors/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /doctors or /doctors.json
   def create
     @doctor = Doctor.new(doctor_params)
 
@@ -34,7 +27,6 @@ class DoctorsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /doctors/1 or /doctors/1.json
   def update
     respond_to do |format|
       if @doctor.update(doctor_params)
@@ -47,7 +39,6 @@ class DoctorsController < ApplicationController
     end
   end
 
-  # DELETE /doctors/1 or /doctors/1.json
   def destroy
     @doctor.destroy
 
@@ -58,13 +49,11 @@ class DoctorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_doctor
       @doctor = Doctor.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def doctor_params
-      params.require(:doctor).permit(:first_name, :last_name)
+      params.require(:doctor).permit(:first_name, :last_name, :code)
     end
 end

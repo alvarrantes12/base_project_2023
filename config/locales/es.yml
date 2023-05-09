@@ -1,31 +1,85 @@
 es:
   application:
-    list_of: Lista del %{model}
+    list_of: Lista de %{model}
+    editing_model: Editando %{model}
     new_model: Nuevo %{model}
+    new_model2: Nueva %{model}
     show: Mostrar
     edit: Editar
     save: Guardar
     delete: Eliminar
     create: Crear
-    cruds_avaliable: CRUDs Disponibles
+    cruds_available: CRUDs Disponibles
     can_not_be_saved: No se pudo guardar
     select: Seleccione
     back: Atrás
   activerecord:
     attributes:
-      content: 
-        title: Titulo
-        description: Descripcion
+      content:
+        title: Título
+        description: Descripción
         start_date: Fecha de inicio
         end_date: Fecha de termino
-        types:
+        special_type: Tipo de contenido
+        special_types:
           video: Video
           streaming: En vivo
           image: Imagen
+      doctor: 
+        first_name: Nombre
+        last_name: Apellido
+        code: Código
+      patient:
+        first_name: Nombre
+        last_name: Apellido
+      appointment:
+        date: Fecha
+        doctor: Doctor
+        patient: Paciente
     modules:
       content:
         one: Contenido
         other: Contenidos
+      doctor:
+        one: Doctor
+        other: Doctores
+      patient:
+        one: Paciente
+        other: Pacientes
+      appointment:
+        one: Cita
+        other: Citas
     errors:
-
-#Secciones obligatorias en archivo de idoma
+      models:
+        content:
+          attributes:
+            title: 
+              blank: sin agregar
+            description: 
+              blank: sin agregar
+            start_date: 
+              blank: sin agregar
+            end_date:
+              blank: sin agregar
+        appointment:
+          attributes:
+            doctor:
+              required: requerido
+            patiene:
+              required: requerido
+        doctor:
+          attributes:
+            first_name:
+              blank: sin agregar
+            last_name:
+              blank: sin agregar
+              too_short: demasiado corto
+            code:
+              blank: sin agregar
+        patient:
+          attributes:
+            first_name: 
+              blank: sin agregar
+            last_name:
+              blank: sin agregar
+              too_short: demasiado corto

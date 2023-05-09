@@ -7,10 +7,11 @@
             = t('application.can_not_be_saved')
           %ul
             -  @content.errors.each do |error|
-              %li error.full_message
+              %li= error.full_message
+
     
   .form-group.mx-4
-    = f.label :tittle, class: "form-label required"
+    = f.label :title, class: "form-label required"
     .div.w-25
       = f.text_field :title, autofocus: true, class: "form-control"
 
@@ -32,7 +33,7 @@
   .form-group.mx-4
     = f.label :special_type, class: "form-label required"
     .div.w-25
-      = f.select(:special_type, options_for_select(:special_types, @content.special_type), {prompt: t('application.select')}, class: "form-control")
+      = f.select(:special_type, options_for_select(special_types, @content.special_type), {prompt: t('application.select')}, class: "form-control")
 
   .row.mt-4
     .offset-3.col-3
