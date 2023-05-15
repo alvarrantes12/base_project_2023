@@ -1,0 +1,31 @@
+%p{:style => "color: green"}= notice
+.div.m-4
+  .page.header
+    %h1.mb-4
+      = t('application.list_of', model: t('activerecord.modules.owner.other'))
+    .float-end.pb-4
+      = link_to t('application.create'), new_owner_path, class: "btn btn-primary"
+    
+%table.table.table-striped
+  %thead
+    %tr
+      %th= t('activerecord.attributes.owner.first_name')
+      %th= t('activerecord.attributes.owner.last_name')
+      %th= t('activerecord.attributes.owner.email')
+      %th= t('activerecord.attributes.owner.owner_id')
+      %th= t('activerecord.attributes.owner.level')
+      %th
+
+    - @owners.each do |owner|
+      %tr
+        %td= owner.first_name
+        %td= owner.last_name
+        %td= owner.email
+        %td= owner.owner_id
+        %td= t("activerecord.attributes.owner.types_level.#{owner.level}")
+        %td
+        %td= link_to t('application.show'), owner, class: "btn btn-info"
+        %td= link_to t('application.edit'), edit_owner_path(owner), class: "btn btn-success"
+        %td= button_to t('application.delete'), owner, method: :delete, class: "btn btn-danger"
+%br
+

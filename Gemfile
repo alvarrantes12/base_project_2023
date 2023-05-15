@@ -25,7 +25,6 @@ group :development, :test do
   gem "haml-rails"
   gem "html2haml"
   gem 'rspec-rails'
-  gem 'rubocop', require: false
 end
 
 group :development do

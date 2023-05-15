@@ -2,8 +2,6 @@ class ContentsController < ApplicationController
   before_action :set_content, only: %i[ show edit update destroy ]
 
   def index
-    # Esto es usado para realizar debbuging.
-    # binding.pry             
     @contents = Content.all
   end
 
@@ -42,16 +40,15 @@ class ContentsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to contents_url, notice: "Content was successfully destroyed." }
-      
     end
   end
 
   private
-  def set_content
-    @content = Content.find(params[:id])
-  end
+    def set_content
+      @content = Content.find(params[:id])
+    end
 
-  def content_params
-    params.require(:content).permit(:title, :description, :start_date, :end_date)
-  end
+    def content_params
+      params.require(:content).permit(:title, :description, :start_date, :end_date, :special_type)
+    end
 end

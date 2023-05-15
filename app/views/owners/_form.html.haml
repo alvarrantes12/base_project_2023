@@ -1,0 +1,41 @@
+= form_for @owner, validate: true do |f|
+  -if @owner.errors.any?
+    .card.mx-4
+      .card-body
+        %div{style: 'color: red'}
+          %h2
+            = t('application.error')
+          %ul
+            -  @owner.errors.each do |error|
+              %li= error.full_message
+
+  .form-group.mx-4
+    = f.label :first_name, class: "form-label required"
+    .dev.w-25
+      = f.text_field :first_name, autofocus: true, class: "form-control"
+
+  .form-group.mx-4
+    = f.label :last_name, class: "form-label required"
+    .dev.w-25
+      = f.text_area :last_name, autofocus: true, class: "form-control"
+
+  .form-group.mx-4
+    = f.label :email, class: "form-label required"
+    .dev.w-25
+      = f.text_area :email, autofocus: true, class: "form-control"
+
+  .form-group.mx-4
+    = f.label :owner_id, class: "form-label required"
+    .dev.w-25
+      = f.text_area :owner_id, autofocus: true, class: "form-control"
+  
+  .form-group.mx-4
+    = f.label :level, class: "form-label required"
+    .dev.w-25
+      = f.select(:level, options_for_select(level, @owner.level), {prompt: t('application.select')}, class: "form-control")
+
+  .row.mt-4
+    .offset-3.col-3
+      = link_to t('application.back'), owners_path, class: "btn btn-secondary btn-block"
+    .col-3
+      = button_tag t('application.save'), class: "btn btn-outline-success btn-block"
